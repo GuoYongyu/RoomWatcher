@@ -1,0 +1,21 @@
+# used to explain different model types
+# include: dataset used to train, YOLO model type, train parameters, etc.
+
+model-01:
+  name: MiceDet-frcnn-sc
+  rcnn: Faster R-CNN
+  dataset: 
+    name: KitchenMice-v1
+    source: Self-Collection
+    format: VOC-2007
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: Adam
+    gpu: RTX 4090 24GB
+  results(last epoch):
+    convergence-epochs: 80
+    precision: 0.591
+    recall: 0.886
+    mAP50: 0.861

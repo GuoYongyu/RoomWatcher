@@ -1,0 +1,161 @@
+# used to explain different model types
+# include: dataset used to train, YOLO model type, train parameters, etc.
+
+model-01:
+  name: MiceDet-8n-rd
+  yolo: YOLOv8n
+  dataset: 
+    name: RatDetection.v1i
+    source: https://universe.roboflow.com/saeed-zekkt/rat-detection-gdpbn
+    format: YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: AdamW
+    gpu: RTX 4060 8GB
+  results:
+    convergence-epochs: 70
+    precision: 0.943
+    recall: 0.889
+    mAP50: 0.956
+
+
+model-02:
+  name: MiceDet-8s-rd
+  yolo: YOLOv8s
+  dataset: 
+    name: RatDetection.v1i
+    source: https://universe.roboflow.com/saeed-zekkt/rat-detection-gdpbn
+    format: YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: AdamW
+    gpu: RTX 4060 8GB
+  results:
+    convergence-epochs: 70
+    precision: 0.954
+    recall: 0.925
+    mAP50: 0.956
+
+
+model-03:
+  name: MiceDet-8n-dm
+  yolo: YOLOv8n
+  dataset: 
+    name: dark-mice.v2i
+    source: https://universe.roboflow.com/forniturerecognitio/dark-mice
+    format: YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: AdamW
+    gpu: RTX 4060 8GB
+  results:
+    convergence-epochs: 70
+    precision: 0.947
+    recall: 0.909
+    mAP50: 0.959
+
+
+model-04:
+  name: MiceDet-8s-dm
+  yolo: YOLOv8s
+  dataset: 
+    name: RatDetection.v1i
+    source: https://universe.roboflow.com/forniturerecognitio/dark-mice
+    format: YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: AdamW
+    gpu: RTX 4060 8GB
+  results:
+    convergence-epochs: 70
+    precision: 0.948
+    recall: 0.932
+    mAP50: 0.958
+
+
+model-05:
+  name: MiceDet-8n-sc
+  yolo: YOLOv8n
+  dataset: 
+    name: KitchenMice-v1
+    source: Self-Collection
+    format: YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: AdamW
+    gpu: RTX 4060 8GB
+  results:
+    convergence-epochs: 90
+    precision: 0.704
+    recall: 0.735
+    mAP50: 0.713
+
+
+model-06:
+  name: MiceDet-8s-sc
+  yolo: YOLOv8s
+  dataset: 
+    name: KitchenMice-v1
+    source: Self-Collection
+    format: YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: AdamW
+    gpu: RTX 4060 8GB
+  results:
+    convergence-epochs: 90
+    precision: 0.905
+    recall: 0.778
+    mAP50: 0.851
+
+
+model-07:
+  name: MiceDet-8m-sc
+  yolo: YOLOv8m
+  dataset: 
+    name: KitchenMice-v1
+    source: Self-Collection
+    format: YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: AdamW
+    gpu: RTX 2080 11GB
+  results:
+    convergence-epochs: Not Stable
+    precision: 0.916
+    recall: 0.735
+    mAP50: 0.812
+
+
+model-08:
+  name: MiceDet-8l-sc
+  yolo: YOLOv8l
+  dataset: 
+    name: KitchenMice-v1
+    source: Self-Collection
+    format: YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: AdamW
+    gpu: RTX 2080 11GB
+  results:
+    convergence-epochs: 90
+    precision: 0.819
+    recall: 0.694
+    mAP50: 0.768

@@ -1,0 +1,48 @@
+# Used to Colorization Output
+colorama==0.4.6
+colorlog==6.8.2
+
+# Faster R-CNN or YOLO
+h5py==3.11.0
+
+# YOLO
+ultralytics==8.2.91
+ultralytics-thop==2.0.6
+gitpython==3.1.43
+requests==2.32.3
+ipython==8.27.0
+
+# Dataset Processing
+matplotlib==3.9.2
+scikit-learn==1.5.2
+scipy==1.14.1
+
+# Image Processing
+numpy==1.26.4  # torch 2.X needs numpy 1.x
+opencv-python==4.10.0.84
+opencv-contrib-python==4.10.0.84
+pandas==2.2.2
+pillow==10.4.0
+scikit-image==0.24.0
+ffmpeg==6.1.1
+ffmpeg-python==0.2.0
+paddlepaddle==2.6.2
+paddleocr==2.9.1
+
+# Load Configuration
+PyYAML==6.0.2
+
+# Model Training and Loading
+tensorboard==2.17.1
+tensorboard-data-server==0.7.2
+torch==2.2.2
+torchvision==0.17.2
+
+# Web Stream Processing
+cryptography==44.0.0
+pyopenssl==24.3.0
+
+# Other Support
+tqdm==4.66.5
+networkx==3.4.2
+idna==3.5  # used to support paddlepaddle

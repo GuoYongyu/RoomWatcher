@@ -1,0 +1,167 @@
+# Save results or Showing on Time or Both
+results-present: 1  # only show results on time
+                 # 2  # only save results to ./results
+                 # 3  # save and show results on time
+
+
+
+# Frame/Image Processing
+## The starting ratio of the relative edge length of the cutting block (inv)
+strip-rate: 6
+
+## The ratio of the cutting block edge length to the total edge length (inv)
+split-rate: 3  ## strip-rate = split-rate * 2
+
+## Type of keypoint detected in each block
+keypoint-type: "ORB"  # ORB, FAST
+
+## The number of keypoints detected in each block
+keypoint-num: 200
+
+## Whether to merge blocks
+merge-blocks: True
+
+## When texts in blocks, whether to detect the text
+## Only used in comparing images with blocks
+detect-text: False
+
+
+
+# Difference between Two Frames
+## Threshold of similarity
+## When use keypoint matching, this threshold is ratio of matched keypoints
+## When use WHOLE image to compare, this threshold is to be bigger
+image-similarity-thresh: 0.9
+
+## The threshold of the number of unmathced image blocks
+unmatched-blocks-thresh: 1
+
+## The ratio threshold of the number of matched keypoints
+matched-keypoints-thresh: 0.95  # ratio of matched keypoints
+
+## The way used to compare the similarity of two frames
+## BLOCKS means to compare the similarity of image blocks
+## WHOLE means to compare the similarity of whole image
+## This can be a list format like ["SSIM-BLOCKS", "HIST-WHOLE"]
+# compare-type: "KEY-POINTS"
+compare-type: "SSIM-BLOCKS"
+# compare-type: "PIXEL-DIFF"
+# compare-type: "SSIM-WHOLE"
+# compare-type: "HIST-BLOCKS"
+# compare-type: "HIST-WHOLE"
+# compare-type: "TEMPLATE-BLOCKS"
+# compare-type: "TEMPLATE-WHOLE"
+# compare-type: "AVG-HASH-BLOCKS"
+# compare-type: "AVG-HASH-BLOCKS"
+
+## The way used to compute the outliers bewteen two frames
+## Only used while compare-type is "PIXEL-DIFF"
+outliers-compute: "MEAN"  # Z-SCORE, IQR, RANSAC, SORT
+
+## Check whether the view has changed
+check-view-changed: True
+
+## Multi-processing for block processing
+multi-processing-for-blocks: 4  # 0 to 32, 0 to disable multi-threading
+
+
+
+# Video Stream
+## JSON file saving the user's web login information
+user-info-file: "./config/token_info.json"
+
+## The path of saving images obtained from the video stream
+web-images-path: "./webimages"
+
+## Video stream sampling gap (min)
+stream-sampling-gap: 10
+
+
+
+# Detector Configuration
+## Use Object Detection or not
+use-detector: True
+
+## Use GPU to accelerate the detection
+gpu-device: "0"  # "cpu" or 0 or 0,1,2
+
+## Wether to use confidence
+use-confidence-thresh: False
+
+## Detection probability threshold
+confidence-thresh: 0.25  # sometimes lower may be better
+
+## NMS threshold used in FasterRCNN and YOLOv5
+nms-iou-thresh: 0.45  # 0.3 for FasterRCNN, 0.45 for YOLOv5
+
+## Times of warming up the model for faster inference
+warmup-times: 1
+
+
+
+# Detector Options
+detector-method: "YOLOv10" # FasterRCNN, YOLOv8, YOLOv5-ST, YOLOv8-ST, YOLOv10
+labels-map: ["mouse"]
+
+
+
+# YOLOv10 Detector
+## The path of the model
+yolov10-model: "./weights/YOLOv10/MiceDet-10x-sc/weights/last.pt"
+# yolov10-model: "./weights/YOLOv10/YOLOv10-coco/yolov10n.pt"
+# yolov10-model: "./weights/YOLOv10/YOLOv10-coco/yolov10s.pt"
+
+
+
+# YOLOv8 Detector
+## The path of the model
+yolov8-model: "./weights/YOLOv8/MiceDet-8n-dm/weights/best.pt"
+# yolov8-model: "./weights/YOLOv8/MiceDet-8n-rd/weights/best.pt"
+# yolov8-model: "./weights/YOLOv8/MiceDet-8n-sc/weights/best.pt"
+# yolov8-model: "./weights/YOLOv8/MiceDet-8s-dm/weights/best.pt"
+# yolov8-model: "./weights/YOLOv8/MiceDet-8s-rd/weights/best.pt"
+# yolov8-model: "./weights/YOLOv8/MiceDet-8s-sc/weights/best.pt"
+
+
+
+# YOLOv8-ST Detector
+## The path of the model
+yolov8st-model: "./weights/YOLOv8-ST/MiceDet-8mst-sc/weights/best.pt"
+# yolov8st-model: "./weights/YOLOv8-ST/MiceDet-8lst-sc/weights/best.pt"
+
+
+
+# Faster R-CNN Detector
+## The path of the model
+fasterrcnn-model: "./weights/FasterRCNN/MiceDet-frcnn-sc/weights/last_epoch_weights.pt"
+# fasterrcnn-model: "./weights/FasterRCNN/MiceDet-frcnn-sc/weights/best_epoch_weights.pt"
+
+
+
+# YOLOv5-Small-Target Detector
+## The path of the model
+# yolov5st-model: "./weights/YOLOv5-ST/MiceDet-5lst-sc-v1/weights/best.pt"
+yolov5st-model: "./weights/YOLOv5-ST/MiceDet-5lst-sc-v2/weights/best.pt"
+
+
+
+# Video Input
+## The path of the video
+video-path: "./test_data/mouse-video.mp4"
+
+## The sample gap of the video
+video-sample-gap-sec: 10  # sample every n seconds
+# video-sample-gap-frame: 300  # sample every n frames
+
+
+
+# Sliding Window
+## The size of the sliding window
+window-size: 10
+
+
+
+# Debug Settings
+# (Some parameters may NOT work)
+## Transfer BGR image to RGB format
+transfer-rgb: True

@@ -1,0 +1,43 @@
+# used to explain different model types
+# include: dataset used to train, YOLO model type, train parameters, etc.
+
+model-01:
+  name: MiceDet-5lst-sc-v1
+  yolo: YOLOv5n-Small-Target
+  dataset: 
+    name: KitchenMice-v1
+    source: Self-Collection
+    format: YOLOv5/YOLOv8
+  train:
+    epochs: 50
+    batch: 16
+    workers: 8
+    optimizer: Adam
+    gpu: RTX 2080 11GB
+    method: train with source codes
+  results:
+    convergence-epochs: 40
+    precision: 0.920
+    recall: 0.939
+    mAP50: 0.951
+
+
+model-01:
+  name: MiceDet-5lst-sc=v2
+  yolo: YOLOv5n-Small-Target
+  dataset: 
+    name: KitchenMice-v1
+    source: Self-Collection
+    format: YOLOv5/YOLOv8
+  train:
+    epochs: 100
+    batch: 16
+    workers: 8
+    optimizer: Adam
+    gpu: RTX 4090 24GB
+    method: train with 4 sub-directories, referenced README.md
+  results:
+    convergence-epochs: 95
+    precision: 0.866
+    recall: 0.796
+    mAP50: 0.825

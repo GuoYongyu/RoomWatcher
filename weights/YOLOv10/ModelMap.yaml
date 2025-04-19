@@ -1,0 +1,20 @@
+# used to explain different model types
+# include: dataset used to train, YOLO model type, train parameters, etc.
+
+model-01:
+  name: MiceDet-10x-sc-v1
+  yolo: YOLOv5n-Small-Target
+  dataset: 
+    name: None
+    source: Collected by YunSu Company
+    format: YOLOv5/YOLOv8
+  train:
+    epochs: 600
+    batch: 256
+    imgsz: 1600
+    method: train with source codes
+  results:
+    convergence-epochs: -1
+    precision: -1
+    recall: -1
+    mAP50: -1

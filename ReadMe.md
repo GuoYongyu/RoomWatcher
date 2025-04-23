@@ -1,4 +1,4 @@
-<center><b><font size=9>Room Watcher</font></b></>
+# Room Watcher
 **关键词：**厨房、家居、老鼠、蟑螂、异常物体检测
 
 # 1. 项目简要说明
